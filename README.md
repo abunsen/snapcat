@@ -7,6 +7,11 @@ A cat-tastic Ruby wrapper for the [Snapchat](http://snapchat.com) private API.
 Meow. This gem is designed to give you a friendly Ruby-like interface for
 interacting with the Snapchat API.
 
+Please note
+-----------
+
+Snapchat has recently [cracked down against third party applications](http://www.theverge.com/2015/4/2/8335917/snapchat-transparency-report-third-party-app-access). Thus, until further notice, this API wrapper will not work. 
+
 
 Installation
 ------------
