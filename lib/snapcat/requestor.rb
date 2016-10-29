@@ -8,7 +8,7 @@ module Snapcat
 
     attr_accessor :auth_token
 
-    base_uri 'https://feelinsonice-hrd.appspot.com/bq/'
+    base_uri 'https://app.snapchat.com'
 
     def initialize(username)
       @auth_token = STATIC_TOKEN
@@ -131,7 +131,7 @@ module Snapcat
     end
 
     def request_headers
-      {'User-Agent' => 'Snapchat/8.1.1 (iPhone; iOS 8.1.1; gzip)',
+      {'User-Agent' => 'Snapchat/9.42.0.1 CFNetwork/808.0.2 Darwin/16.0.0',
        'Accept-Language' => 'en',
        'Accept-Locale' => 'en'}
     end
