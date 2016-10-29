@@ -69,7 +69,18 @@ module Snapcat
 
     def login(password)
       set_user_data_with(
-        @requestor.request_with_username('loq/login', password: password)
+        @requestor.request_with_username('loq/login', {
+          password: password,
+          pre_auth_token: "",
+          remember_device: "true",
+          screen_height_px: "800",
+          width: "640",
+          height: "1280",
+          screen_width_in: "2.992127",
+          screen_width_px: "480",
+          screen_height_in: "5.0",
+          nt: "1"
+        })
       )
     end
 
