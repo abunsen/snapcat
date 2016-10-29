@@ -133,7 +133,9 @@ module Snapcat
     def request_headers
       {'User-Agent' => 'Snapchat/9.42.0.1 CFNetwork/808.0.2 Darwin/16.0.0',
        'Accept-Language' => 'en',
-       'Accept-Locale' => 'en'}
+       'Accept-Locale' => 'en_US',
+       'Accept-Encoding' => 'gzip',
+       'Accept' => '*/*'}
     end
   end
 end

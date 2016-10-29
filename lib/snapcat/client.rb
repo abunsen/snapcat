@@ -17,7 +17,7 @@ module Snapcat
 
     def block(username)
       @requestor.request_with_username(
-        '/bq/friend',
+        'bq/friend',
         action: 'block',
         friend: username
       )
@@ -29,7 +29,7 @@ module Snapcat
 
     def fetch_updates(update_timestamp = 0)
       set_user_data_with(@requestor.request_with_username(
-        '/loq/all_updates',
+        'loq/all_updates',
         update_timestamp: update_timestamp
       ))
     end
@@ -44,7 +44,7 @@ module Snapcat
 
     def delete_friend(username)
       @requestor.request_with_username(
-        '/bq/friend',
+        'bq/friend',
         action: 'delete',
         friend: username
       )
@@ -52,7 +52,7 @@ module Snapcat
 
     def add_friend(username)
       @requestor.request_with_username(
-        '/bq/friend',
+        'bq/friend',
         action: 'add',
         friend: username
       )
@@ -60,7 +60,7 @@ module Snapcat
 
     def set_display_name(username, display_name)
       @requestor.request_with_username(
-        '/bq/friend',
+        'bq/friend',
         action: 'display',
         display: display_name,
         friend: username
@@ -69,12 +69,12 @@ module Snapcat
 
     def login(password)
       set_user_data_with(
-        @requestor.request_with_username('/loq/login', password: password)
+        @requestor.request_with_username('loq/login', password: password)
       )
     end
 
     def logout
-      @requestor.request_with_username('/loq/logout')
+      @requestor.request_with_username('loq/logout')
     end
 
     def register(password, birthday, email)
@@ -129,7 +129,7 @@ module Snapcat
       media_id = result.data[:media_id]
 
       @requestor.request_with_username(
-        '/loq/send',
+        'loq/send',
         media_id: media_id,
         recipient: prepare_recipients(recipients),
         time: options[:view_duration] || 3
@@ -142,7 +142,7 @@ module Snapcat
 
     def unblock(username)
       @requestor.request_with_username(
-        '/bq/friend',
+        'bq/friend',
         action: 'unblock',
         friend: username
       )
@@ -174,7 +174,7 @@ module Snapcat
 
     def update_email(email)
       @requestor.request_with_username(
-        '/ph/settings',
+        'ph/settings',
         action: 'updateEmail',
         email: email
       )
@@ -182,7 +182,7 @@ module Snapcat
 
     def update_privacy(code)
       @requestor.request_with_username(
-        '/ph/settings',
+        'ph/settings',
         action: 'updatePrivacy',
         privacySetting: code
       )

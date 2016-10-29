@@ -1,9 +1,10 @@
 module Snapcat
   class Response
     RECOGNIZED_CONTENT_TYPES = %w(application/json application/octet-stream)
-    attr_reader :code, :data, :http_success
+    attr_reader :code, :data, :http_success, :raw_response
 
     def initialize(response, additional_fields = {})
+      @raw_response = response
       @data = formatted_result(response).merge(additional_fields)
       @code = response.code
       @http_success = response.success?
